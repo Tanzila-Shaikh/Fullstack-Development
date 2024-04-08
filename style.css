@@ -1,0 +1,181 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+   
+    background-size: cover;
+}
+
+.container {
+    max-width: 400px;
+    margin-top: 15%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="email"],
+input[type="password"],
+button {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #007bff;
+}
+
+
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+.container {
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header {
+    
+    background-color: #f0f0f0;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 50%;
+
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    font-size: 19px;
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+.hero {
+    background-image: url('des.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 200px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+.l-button{
+    display: inline-block;
+    background-color: #7c0bde;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+.l-button:hover{
+    background-color: #7c0bde;
+    color: #ffffff;
+    background-color: #7c0bde; /* Light gray background color on hover */
+            transition: background-color 0.3s ease; /* Smooth transition effect */
+            box-shadow: 0 0 10px #007bff;
+}
+.cta-button:hover {
+    background-color: #007bff;
+    color: #021734;
+    background-color: #f0f0f0; /* Light gray background color on hover */
+            transition: background-color 0.3s ease; /* Smooth transition effect */
+            box-shadow: 0 0 10px #f0f0f0;
+}
+
+.testimonials {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.testimonial {
+    margin-bottom: 30px;
+}
+
+.testimonial p {
+    padding-top:2%;
+    font-style: italic;
+}
+
+.testimonial span {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Assessment Form</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(90deg, rgba(23,0,36,1) 0%, rgba(194,30,201,1) 42%, rgba(0,172,255,1) 100%);
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 9%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.input-radio,
+.input-number {
+  margin-right: 10px;
+}
+
+.input-text {
+  width: calc(100% - 22px);
+  padding: 8px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.btn-container button {
+  margin: 0 10px;
+}
+
+.btn-submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 90px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 20px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Personal Assessment Form</h2>
+  <div class="progress-container">
+    <div class="progress-bar" id="progress">0%</div>
+  </div>
+  <form id="assessment-form" method="POST" action="/predict">
+    <div class="form-group question" data-question="1">
+      <label class="label">Sadness:</label><br>
+      <input type="radio" name="sadness" value="Usually" class="input-radio"> Usually<br>
+      <input type="radio" name="sadness" value="Sometimes" class="input-radio"> Sometimes<br>
+      <input type="radio" name="sadness" value="Seldom" class="input-radio"> Seldom<br>
+      <input type="radio" name="sadness" value="Most-Often" class="input-radio"> Most-Often<br>
+    </div>
+    <!-- Add more questions as needed -->
+    <div class="form-group question" data-question="2" style="display:none;">
+      <label class="label">Euphoric:</label><br>
+      <input type="radio" name="euphoric" value="Seldom" class="input-radio"> Seldom<br>
+      <input type="radio" name="euphoric" value="Most-Often" class="input-radio"> Most-Often<br>
+      <input type="radio" name="euphoric" value="Usually" class="input-radio"> Usually<br>
+      <input type="radio" name="euphoric" value="Sometimes" class="input-radio"> Sometimes<br>
+    </div>
+    <!-- Add more questions as needed -->
+    <div class="form-group question" data-question="3" style="display:none;">
+        <label class="label">Exhausted:</label><br>
+        <input type="radio" name="exhausted" value="Sometimes" class="input-radio"> Sometimes<br>
+        <input type="radio" name="exhausted" value="Usually" class="input-radio"> Usually<br>
+        <input type="radio" name="exhausted" value="Seldom" class="input-radio"> Seldom<br>
+        <input type="radio" name="exhausted" value="Most-Often" class="input-radio"> Most-Often<br>
+      </div>
+      <div class="form-group question" data-question="4" style="display:none;">
+        <label class="label">Sleep Disorder:</label><br>
+        <input type="radio" name="sleep_disorder" value="Sometimes" class="input-radio"> Sometimes<br>
+        <input type="radio" name="sleep_disorder" value="Most-Often" class="input-radio"> Most-Often<br>
+        <input type="radio" name="sleep_disorder" value="Usually" class="input-radio"> Usually<br>
+        <input type="radio" name="sleep_disorder" value="Seldom" class="input-radio"> Seldom<br>
+      </div>
+      <div class="form-group question" data-question="5" style="display:none;">
+        <label class="label">Mood Swing:</label><br>
+        <input type="radio" name="mood_swing" value="YES" class="input-radio"> YES<br>
+        <input type="radio" name="mood_swing" value="NO" class="input-radio"> NO<br>
+      </div>
+      <div class="form-group question" data-question="6" style="display:none;">
+        <label class="label">Suicidal Thoughts:</label><br>
+        <input type="radio" name="suicidal_thoughts" value="YES" class="input-radio"> YES<br>
+        <input type="radio" name="suicidal_thoughts" value="NO" class="input-radio"> NO<br>
+      </div>
+      <div class="form-group question" data-question="7" style="display:none;">
+        <label class="label">Anorexia:</label><br>
+        <input type="radio" name="anorexia" value="NO" class="input-radio"> NO<br>
+        <input type="radio" name="anorexia" value="YES" class="input-radio"> YES<br>
+      </div>
+      <div class="form-group question" data-question="8" style="display:none;">
+        <label class="label">Authority Respect:</label><br>
+        <input type="radio" name="authority_respect" value="NO" class="input-radio"> NO<br>
+        <input type="radio" name="authority_respect" value="YES" class="input-radio"> YES<br>
+      </div>
+      <div class="form-group question" data-question="9" style="display:none;">
+        <label class="label">Try-Explanation:</label><br>
+        <input type="radio" name="try_explanation" value="YES" class="input-radio"> YES<br>
+        <input type="radio" name="try_explanation" value="NO" class="input-radio"> NO<br>
+      </div>
+      <div class="form-group question" data-question="10" style="display:none;">
+        <label class="label">Aggressive Response:</label><br>
+        <input type="radio" name="aggressive_response" value="NO" class="input-radio"> NO<br>
+        <input type="radio" name="aggressive_response" value="YES" class="input-radio"> YES<br>
+      </div>
+      <div class="form-group question" data-question="11" style="display:none;">
+        <label class="label">Ignore & Move-On:</label><br>
+        <input type="radio" name="ignore_move_on" value="NO" class="input-radio"> NO<br>
+        <input type="radio" name="ignore_move_on" value="YES" class="input-radio"> YES<br>
+      </div>
+      <div class="form-group question" data-question="12" style="display:none;">
+        <label class="label">Nervous Breakdown:</label><br>
+        <input type="radio" name="nervous_breakdown" value="YES" class="input-radio"> YES<br>
+        <input type="radio" name="nervous_breakdown" value="NO" class="input-radio"> NO<br>
+      </div>
+      <div class="form-group question" data-question="13" style="display:none;">
+        <label class="label">Admit Mistakes:</label><br>
+        <input type="radio" name="admit_mistakes" value="YES" class="input-radio"> YES<br>
+        <input type="radio" name="admit_mistakes" value="NO" class="input-radio"> NO<br>
+      </div>
+      <div class="form-group question" data-question="14" style="display:none;">
+        <label class="label">Overthinking:</label><br>
+        <input type="radio" name="overthinking" value="YES" class="input-radio"> YES<br>
+        <input type="radio" name="overthinking" value="NO" class="input-radio"> NO<br>
+      </div>
+      <div class="form-group question" data-question="15" style="display:none;">
+        <label class="label" for="sexual_activity">Sexual Activity (1 to 9):</label><br>
+        <input type="number" id="sexual_activity" name="sexual_activity" min="1" max="9" required><br>
+      </div>
+      <div class="form-group question" data-question="16" style="display:none;">
+        <label class="label" for="concentration">Concentration (1 to 9):</label><br>
+        <input type="number" id="concentration" name="concentration" min="1" max="10" required><br>
+      </div>
+      <div class="form-group question" data-question="17" style="display:none;">
+        <label class="label" for="optimism">Optimism (1 to 9):</label><br>
+        <input type="number" id="optimism" name="optimism" min="1" max="10" required><br>
+      </div>
+    <div class="form-group btn-container">
+      <button type="button" class="btn-submit" onclick="previousQuestion()" style="display: none;" id="previous-btn">Previous</button>
+      <button type="button" class="btn-submit" onclick="nextQuestion()">Next</button>
+      <input type="submit" value="Predict" class="btn-submit" id="predict-btn" style="display:none;">
+    </div>
+  </form>
+</div>
+
+<script>
+let currentQuestion = 1;
+const totalQuestions = document.querySelectorAll('.question').length;
+const progressBar = document.getElementById('progress');
+const previousButton = document.getElementById('previous-btn');
+const predictButton = document.getElementById('predict-btn');
+
+function nextQuestion() {
+  const current = document.querySelector(`.question[data-question="${currentQuestion}"]`);
+  const next = document.querySelector(`.question[data-question="${currentQuestion + 1}"]`);
+  
+    if (current) {
+      current.style.display = 'none';
+    }
+    if (next) {
+      next.style.display = 'block';
+      currentQuestion++;
+      updateProgress();
+      if (currentQuestion > 1) {
+        previousButton.style.display = 'inline-block';
+      }
+    } else {
+      predictButton.style.display = 'inline-block';
+    }
+  }
+
+
+function previousQuestion() {
+  const current = document.querySelector(`.question[data-question="${currentQuestion}"]`);
+  const previous = document.querySelector(`.question[data-question="${currentQuestion - 1}"]`);
+  
+    if (previous) {
+      previous.style.display = 'block';
+      currentQuestion--;
+      updateProgress();
+      if (currentQuestion === 1) {
+        previousButton.style.display = 'none';
+      }
+      predictButton.style.display = 'none';
+    }
+  }
+
+
+function updateProgress() {
+  const progress = Math.round((currentQuestion / totalQuestions) * 100);
+  progressBar.style.width = `${progress}%`;
+  progressBar.textContent = `${progress}%`;
+}
+
+</script>
+
+</body>
+</html>

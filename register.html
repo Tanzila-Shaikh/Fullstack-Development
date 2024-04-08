@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('/static/ttt.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .register-container {
+            width: 25%;
+            background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
+            padding: 40px;
+            border: 1px solid;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            margin-right: 570px;
+            color: #ffffff;
+            font: bold 11px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+            backdrop-filter: blur(2px);/* Box shadow for container */
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ffffff;
+            box-sizing: border-box;
+            font-size: 20px;
+            outline: none;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus {
+            border-color: #007bff; /* Change border color on focus */
+        }
+        input[type="submit"] {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #f0f0f0; /* Light gray background color on hover */
+            transition: background-color 0.3s ease; /* Smooth transition effect */
+            box-shadow: 0 0 5px #f0f0f0;
+            color: #c31925; 
+        }
+        input[type="text"]::placeholder,
+        input[type="password"]::placeholder,
+        input[type="email"]::placeholder {
+            color: #fff;
+        }
+        .row {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            margin-bottom: 10px; /* Added margin bottom for spacing */
+        }
+        .row a {
+            display: flexbox;
+            color: #ffffff;
+            /* Align checkbox with text */
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>Register</h1>
+        <form action="/register" method="POST">
+            <div class="input">
+                <input type="text" name="fullname" placeholder="Full Name">
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="confirm_password" placeholder="Confirm Password">
+            </div>
+            <input type="submit" value="Register">
+            <p>Already have an account? 
+                <a href="/login">Login</a></p>
+        </form>
+    </div>
+</body>
+</html>
